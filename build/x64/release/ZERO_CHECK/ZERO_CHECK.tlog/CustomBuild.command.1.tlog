@@ -1,0 +1,10 @@
+^D:\SQP-OPTIMAL-CONTROLS\BUILD\CMAKEFILES\4F0AF15AC2101942163429ECAF2EDF2B\GENERATE.STAMP.RULE
+setlocal
+E:\CMake\bin\cmake.exe -SD:/sqp-optimal-controls -BD:/sqp-optimal-controls/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/sqp-optimal-controls/build/SQP_Optimal_Controls.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

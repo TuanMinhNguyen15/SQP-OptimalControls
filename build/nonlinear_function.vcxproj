@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4E437E9E-AE9F-37DF-A02D-9A57AFE9C195}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>nonlinear_function</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\sqp-optimal-controls\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nonlinear_function.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">nonlinear_function</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\sqp-optimal-controls\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">nonlinear_function.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">nonlinear_function</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\sqp-optimal-controls\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">nonlinear_function.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">nonlinear_function</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\sqp-optimal-controls\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">nonlinear_function.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">nonlinear_function</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/cmake_installs/osqp-interface/include" /external:I "D:/osqp/install/include/osqp"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\cmake_installs\osqp-interface\include;D:\osqp\install\include\osqp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\cmake_installs\osqp-interface\include;D:\osqp\install\include\osqp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>D:\cmake_installs\osqp-interface\lib\osqp_interface.lib;D:\osqp\install\lib\osqp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/sqp-optimal-controls/build/Debug/nonlinear_function.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/sqp-optimal-controls/build/Debug/nonlinear_function.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/cmake_installs/osqp-interface/include" /external:I "D:/osqp/install/include/osqp"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\cmake_installs\osqp-interface\include;D:\osqp\install\include\osqp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\cmake_installs\osqp-interface\include;D:\osqp\install\include\osqp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>D:\cmake_installs\osqp-interface\lib\osqp_interface.lib;D:\osqp\install\lib\osqp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/sqp-optimal-controls/build/Release/nonlinear_function.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/sqp-optimal-controls/build/Release/nonlinear_function.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/cmake_installs/osqp-interface/include" /external:I "D:/osqp/install/include/osqp"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\cmake_installs\osqp-interface\include;D:\osqp\install\include\osqp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\cmake_installs\osqp-interface\include;D:\osqp\install\include\osqp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>D:\cmake_installs\osqp-interface\lib\osqp_interface.lib;D:\osqp\install\lib\osqp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/sqp-optimal-controls/build/MinSizeRel/nonlinear_function.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/sqp-optimal-controls/build/MinSizeRel/nonlinear_function.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "D:/cmake_installs/osqp-interface/include" /external:I "D:/osqp/install/include/osqp"</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\cmake_installs\osqp-interface\include;D:\osqp\install\include\osqp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\cmake_installs\osqp-interface\include;D:\osqp\install\include\osqp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>D:\cmake_installs\osqp-interface\lib\osqp_interface.lib;D:\osqp\install\lib\osqp.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/sqp-optimal-controls/build/RelWithDebInfo/nonlinear_function.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/sqp-optimal-controls/build/RelWithDebInfo/nonlinear_function.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\sqp-optimal-controls\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/sqp-optimal-controls/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+E:\CMake\bin\cmake.exe -SD:/sqp-optimal-controls -BD:/sqp-optimal-controls/build --check-stamp-file D:/sqp-optimal-controls/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\cmake_installs\osqp-interface\cmake\osqp_interface-config-debug.cmake;D:\cmake_installs\osqp-interface\cmake\osqp_interface-config.cmake;D:\osqp\install\lib\cmake\osqp\osqp-config.cmake;D:\osqp\install\lib\cmake\osqp\osqp-targets-debug.cmake;D:\osqp\install\lib\cmake\osqp\osqp-targets.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeCCompiler.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeCXXCompiler.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeRCCompiler.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeSystem.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\sqp-optimal-controls\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/sqp-optimal-controls/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+E:\CMake\bin\cmake.exe -SD:/sqp-optimal-controls -BD:/sqp-optimal-controls/build --check-stamp-file D:/sqp-optimal-controls/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\cmake_installs\osqp-interface\cmake\osqp_interface-config-debug.cmake;D:\cmake_installs\osqp-interface\cmake\osqp_interface-config.cmake;D:\osqp\install\lib\cmake\osqp\osqp-config.cmake;D:\osqp\install\lib\cmake\osqp\osqp-targets-debug.cmake;D:\osqp\install\lib\cmake\osqp\osqp-targets.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeCCompiler.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeCXXCompiler.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeRCCompiler.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeSystem.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\sqp-optimal-controls\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/sqp-optimal-controls/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+E:\CMake\bin\cmake.exe -SD:/sqp-optimal-controls -BD:/sqp-optimal-controls/build --check-stamp-file D:/sqp-optimal-controls/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\cmake_installs\osqp-interface\cmake\osqp_interface-config-debug.cmake;D:\cmake_installs\osqp-interface\cmake\osqp_interface-config.cmake;D:\osqp\install\lib\cmake\osqp\osqp-config.cmake;D:\osqp\install\lib\cmake\osqp\osqp-targets-debug.cmake;D:\osqp\install\lib\cmake\osqp\osqp-targets.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeCCompiler.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeCXXCompiler.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeRCCompiler.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeSystem.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\sqp-optimal-controls\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/sqp-optimal-controls/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+E:\CMake\bin\cmake.exe -SD:/sqp-optimal-controls -BD:/sqp-optimal-controls/build --check-stamp-file D:/sqp-optimal-controls/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\cmake_installs\osqp-interface\cmake\osqp_interface-config-debug.cmake;D:\cmake_installs\osqp-interface\cmake\osqp_interface-config.cmake;D:\osqp\install\lib\cmake\osqp\osqp-config.cmake;D:\osqp\install\lib\cmake\osqp\osqp-targets-debug.cmake;D:\osqp\install\lib\cmake\osqp\osqp-targets.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeCCompiler.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeCXXCompiler.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeRCCompiler.cmake;D:\sqp-optimal-controls\build\CMakeFiles\3.24.3\CMakeSystem.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeCInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeRCInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;E:\CMake\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;E:\CMake\share\cmake-3.24\Modules\Compiler\MSVC.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\Windows.cmake;E:\CMake\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\sqp-optimal-controls\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\sqp-optimal-controls\examples\nonlinear_function.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\sqp-optimal-controls\build\ZERO_CHECK.vcxproj">
+      <Project>{3D170B63-B8F0-32D3-96FE-2D8E4D9466AB}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
