@@ -18,7 +18,7 @@ class Pendulum {
             c_float Ts = 0.01; // Sampling time
             c_int max_iter = 100;
             c_float threshold = 1e-3;
-            c_float trust_region = 1;
+            c_float trust_region = 5;
         };
 
         struct Solution {
@@ -27,6 +27,7 @@ class Pendulum {
             std::vector<c_float> torque;
             std::vector<c_float> slack_theta,slack_theta_dot;
             c_float cost;
+            std::vector<c_float> slack_trials;
         };
 
         Pendulum(Params params);

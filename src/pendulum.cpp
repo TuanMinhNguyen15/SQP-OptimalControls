@@ -142,6 +142,7 @@ void Pendulum::parameter_generate(std::vector<c_float> theta_,std::vector<c_floa
 
 Pendulum::Solution Pendulum::solve(c_float theta0_val,c_float theta0_dot_val){
     Solution solution;
+    solution.slack_trials.clear();
 
     std::vector<c_float> theta_current,theta_dot_current,torque_current;
     std::vector<c_float> p_theta_val,p_scalar_val;
@@ -154,8 +155,10 @@ Pendulum::Solution Pendulum::solve(c_float theta0_val,c_float theta0_dot_val){
     c_float d_mag;
     c_float d_theta_mag,d_theta_dot_mag,d_torque_mag;
   
-    uint8_t iter = 0;
-    c_float trust_region_val = params_.trust_region;
+    int iter;
+    c_float trust_region_val;
+
+    int num_trials = 500; // 200
 
     theta_current.resize(params_.horizon+1);
     theta_dot_current.resize(params_.horizon+1,0);
@@ -175,76 +178,109 @@ Pendulum::Solution Pendulum::solve(c_float theta0_val,c_float theta0_dot_val){
     theta0.set_data({theta0_val});
     theta0_dot.set_data({theta0_dot_val});
 
-    // slack costs
-    slack_theta_cost.set_data(slack_theta_cost_val);
-    slack_theta_dot_cost.set_data(slack_theta_dot_cost_val);
+    // trial start here!
+    for (int trial = 0; trial < num_trials; trial++){
+        // trust region reset 
+        trust_region_val = params_.trust_region;
 
-    // initial cost
-    cost_current = merit_function(theta_current,theta_dot_current,torque_current);
+        // slack costs
+        slack_theta_cost.set_data(slack_theta_cost_val);
+        slack_theta_dot_cost.set_data(slack_theta_dot_cost_val);
 
-    do
-    {
-        theta_bar_val.clear();
-        theta_bar_val.insert(theta_bar_val.begin(),theta_current.begin(),theta_current.end()-1);
-        parameter_generate(theta_current,p_theta_val,p_scalar_val);
-        theta_bar.set_data(theta_bar_val);
-        p_theta.set_data(p_theta_val);
-        p_scalar.set_data(p_scalar_val);
-        trust_region.set_data({trust_region_val});
+        // initial cost
+        cost_current = merit_function(theta_current,theta_dot_current,torque_current);
 
-        controller.update();
-        controller.solve();
+        iter = 0;
+        do
+        {
+            theta_bar_val.clear();
+            theta_bar_val.insert(theta_bar_val.begin(),theta_current.begin(),theta_current.end()-1);
+            parameter_generate(theta_current,p_theta_val,p_scalar_val);
+            theta_bar.set_data(theta_bar_val);
+            p_theta.set_data(p_theta_val);
+            p_scalar.set_data(p_scalar_val);
+            trust_region.set_data({trust_region_val});
 
-        std::cout << "status: " << controller.get_status() << std::endl;
+            controller.update();
+            controller.solve();
 
-        // check for convergence
-        d_mag = 0;
-        for (int i = 0; i < params_.horizon; i++){
-            d_mag += std::abs(d_theta.solution[i]);
+            // std::cout << "status: " << controller.get_status() << std::endl;
+
+            // check for convergence
+            d_mag = 0;
+            for (int i = 0; i < params_.horizon; i++){
+                d_mag += std::abs(d_theta.solution[i]);
+            }
+            if (d_mag <= params_.threshold){
+                break;
+            }
+
+            // update
+            cost_new_predicted = controller.get_obj_val();
+            cost_new_actual = merit_function(theta.solution,theta_dot.solution,torque.solution);
+        
+            predicted_decrease = cost_current - cost_new_predicted;
+            actual_decrease = cost_current - cost_new_actual;
+
+            // std::cout << "predicted_decrease = " << predicted_decrease << " , actual_decrease = " << actual_decrease << std::endl;
+        
+
+            if (actual_decrease >= alpha*predicted_decrease && predicted_decrease >= 0){
+                // std::cout << "success \n";
+                trust_region_val *= beta_succ;
+
+                theta_current = theta.solution;
+                theta_dot_current = theta_dot.solution;
+                torque_current = torque.solution;
+                cost_current = cost_new_actual;
+
+                slack_theta_current = slack_theta_abs.solution;
+                slack_theta_dot_current = slack_theta_dot_abs.solution;
+            }
+            else{
+                // std::cout << "fail \n";
+                trust_region_val *= beta_fail;
+            }
+
+            // std::cout << "------------------\n";
+        } while (++iter < params_.max_iter);
+        
+        
+        if (iter == params_.max_iter){
+            std::cout << "max iteration reached\n";
         }
-        if (d_mag <= params_.threshold){
+        else{
+            std::cout << "solution converged\n";
+        }
+
+        std::cout << "current_cost = " << cost_current << std::endl;
+        std::cout << "------------------\n";
+
+        // check for slack violations
+        bool good = true;
+        c_float slack_mag = 0;
+        for (int i = 0; i < params_.horizon; i++){
+            slack_mag += slack_theta_current[i];
+            slack_mag += slack_theta_dot_current[i];
+
+            if (slack_theta_current[i] > 1e-2){
+                slack_theta_cost_val[i] *= 1.5;
+                good = false;
+            }
+            if (slack_theta_dot_current[i] > 1e-2){
+                slack_theta_dot_cost_val[i] *= 1.5;
+                good = false;
+            }
+        }
+
+        solution.slack_trials.push_back(slack_mag);
+
+        if (good){
+            std::cout << "converged!!!!!!";
             break;
         }
 
-        // update
-        cost_new_predicted = controller.get_obj_val();
-        cost_new_actual = merit_function(theta.solution,theta_dot.solution,torque.solution);
-     
-        predicted_decrease = cost_current - cost_new_predicted;
-        actual_decrease = cost_current - cost_new_actual;
-
-        std::cout << "predicted_decrease = " << predicted_decrease << " , actual_decrease = " << actual_decrease << std::endl;
-     
-
-        if (actual_decrease >= alpha*predicted_decrease){
-            std::cout << "success \n";
-            trust_region_val *= beta_succ;
-
-            theta_current = theta.solution;
-            theta_dot_current = theta_dot.solution;
-            torque_current = torque.solution;
-            cost_current = cost_new_actual;
-
-            slack_theta_current = slack_theta.solution;
-            slack_theta_dot_current = slack_theta_dot.solution;
-        }
-        else{
-            std::cout << "fail \n";
-            trust_region_val *= beta_fail;
-        }
-
-        std::cout << "------------------\n";
-    } while (++iter < params_.max_iter);
-    
-    
-    if (iter == params_.max_iter){
-        std::cout << "max iteration reached\n";
     }
-    else{
-        std::cout << "solution converged\n";
-    }
-
-    std::cout << "current_cost = " << cost_current << std::endl;
 
     solution.theta = theta_current;
     solution.theta_dot = theta_dot_current;
@@ -252,7 +288,6 @@ Pendulum::Solution Pendulum::solve(c_float theta0_val,c_float theta0_dot_val){
     solution.cost = cost_current;
     solution.slack_theta = slack_theta_current;
     solution.slack_theta_dot = slack_theta_dot_current;
-    
 
     return solution;
 }
