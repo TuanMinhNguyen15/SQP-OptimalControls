@@ -1,4 +1,4 @@
-# Pendulum Trajectory Optimization using Squential Quadratic Programming
+# Pendulum Trajectory Optimization using Sequential Quadratic Programming
 
 After watching Russ Tedrake's [trajectory optimization](https://www.youtube.com/watch?v=g-VehRFsDcI&list=PL58F1D0056F04CF8C&index=9&ab_channel=MITOpenCourseWare) lecture and Stephen Boyd's [sequential convex programming](https://www.youtube.com/watch?v=upMWYV7S1Y0&t=3800s&ab_channel=Stanford), I wanted to apply what I've learned into controlling a simple pendulum such that it can swing up to the inverted position. In a nutshell, the pendulum's trajectory is optimized using the following steps: 
 
