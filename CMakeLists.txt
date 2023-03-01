@@ -14,8 +14,15 @@ add_library(pendulum STATIC ./src/pendulum.cpp)
 target_link_libraries(pendulum PUBLIC osqp_interface::osqp_interface)
 target_include_directories(pendulum PUBLIC ./include)
 
+add_library(cartpole STATIC ./src/cartpole.cpp)
+target_link_libraries(cartpole PUBLIC osqp_interface::osqp_interface)
+target_include_directories(cartpole PUBLIC ./include)
+
 add_executable(pendulum_demo ./examples/pendulum_demo.cpp)
 target_link_libraries(pendulum_demo PRIVATE pendulum)
+
+add_executable(cartpole_demo ./examples/cartpole_demo.cpp)
+target_link_libraries(cartpole_demo PRIVATE cartpole)
 
 add_executable(linear_function ./examples/linear_function.cpp)
 target_link_libraries(linear_function PRIVATE osqp_interface::osqp_interface)

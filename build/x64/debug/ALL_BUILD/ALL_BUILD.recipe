@@ -5,6 +5,9 @@
       <FullPath>D:\sqp-optimal-controls\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
+      <FullPath>D:\sqp-optimal-controls\build\Debug\cartpole_demo.exe</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
       <FullPath>D:\sqp-optimal-controls\build\Debug\demo.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>

@@ -173,6 +173,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
+    <ProjectReference Include="D:\sqp-optimal-controls\build\cartpole.vcxproj">
+      <Project>{2591F195-0631-35C3-9E5E-AE898AEFEE34}</Project>
+      <Name>cartpole</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\sqp-optimal-controls\build\cartpole_demo.vcxproj">
+      <Project>{FFC5D4B4-680D-3CB4-95F7-4D6C478684F5}</Project>
+      <Name>cartpole_demo</Name>
+    </ProjectReference>
     <ProjectReference Include="D:\sqp-optimal-controls\build\demo.vcxproj">
       <Project>{1037F3BA-3843-31EA-A11D-0F9CE6FC8A6B}</Project>
       <Name>demo</Name>
