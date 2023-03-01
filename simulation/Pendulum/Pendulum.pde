@@ -3,7 +3,9 @@ float y_origin;
 float scaling = 300;
 Point p_origin = new Point();
 
+String[] theta_data;
 
+int horizon;
 int tstep = 0;
 boolean recording = false;
 
@@ -20,7 +22,11 @@ Point transform(Point p){
   return p_transformed;
 }
 
-void draw_pendulum(float theta){
+void draw_pendulum(int step){
+  
+  String[] data_line;
+  data_line = theta_data[step].split(" ");
+  float theta = Float.parseFloat(data_line[1]);
 
   translate(width/2, height/2);
   rotate(theta-PI/2);
@@ -39,8 +45,20 @@ void setup(){
   p_origin.x = x_origin;
   p_origin.y = y_origin;
   
-  draw_pendulum(PI);
+  theta_data = loadStrings("theta_data.tmp");
+  horizon = theta_data.length;
+  
+ 
 }
 
 void draw(){
+  if (tstep < horizon){
+    background(150);
+    draw_pendulum(tstep);
+    tstep++;
+    
+    if (recording){
+      saveFrame("frames/sim_####.png");
+    } 
+  }
 }

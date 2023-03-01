@@ -28,12 +28,12 @@ int main(){
 
     // std::cout << "Objective value = " << solution.cost << std::endl;
 
-    theta_data = fopen("theta_data.tmp","w");
-    theta_dot_data = fopen("theta_dot_data.temp","w");
-    torque_data = fopen("torque_data.temp","w");
-    slack_theta_data = fopen("slack_theta_data.tmp","w");
-    slack_theta_dot_data = fopen("slack_theta_dot_data.temp","w");
-    slack_mag_data = fopen("slack_mag_data.temp","w");
+    theta_data = fopen("../simulation/Pendulum/theta_data.tmp","w");
+    theta_dot_data = fopen("../simulation/Pendulum/theta_dot_data.temp","w");
+    torque_data = fopen("../simulation/Pendulum/torque_data.temp","w");
+    slack_theta_data = fopen("../simulation/Pendulum/slack_theta_data.tmp","w");
+    slack_theta_dot_data = fopen("../simulation/Pendulum/slack_theta_dot_data.temp","w");
+    slack_mag_data = fopen("../simulation/Pendulum/slack_mag_data.temp","w");
 
     for (int i = 0; i < params.horizon; i++){
         fprintf(theta_data, "%d %f\n",i,solution.theta[i]);

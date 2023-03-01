@@ -5,21 +5,6 @@
       <FullPath>D:\sqp-optimal-controls\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>D:\sqp-optimal-controls\build\Debug\cartpole_demo.exe</FullPath>
-    </ProjectOutput>
-    <ProjectOutput>
-      <FullPath>D:\sqp-optimal-controls\build\Debug\demo.exe</FullPath>
-    </ProjectOutput>
-    <ProjectOutput>
-      <FullPath>D:\sqp-optimal-controls\build\Debug\linear_function.exe</FullPath>
-    </ProjectOutput>
-    <ProjectOutput>
-      <FullPath>D:\sqp-optimal-controls\build\Debug\nonlinear_function.exe</FullPath>
-    </ProjectOutput>
-    <ProjectOutput>
-      <FullPath>D:\sqp-optimal-controls\build\Debug\nonlinear_function2.exe</FullPath>
-    </ProjectOutput>
-    <ProjectOutput>
       <FullPath>D:\sqp-optimal-controls\build\Debug\pendulum_demo.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>

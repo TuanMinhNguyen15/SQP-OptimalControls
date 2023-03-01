@@ -103,43 +103,6 @@ void Pendulum::parameter_generate(std::vector<c_float> theta_,std::vector<c_floa
     }
 }
 
-// Pendulum::Solution Pendulum::optimize(c_float theta0,c_float theta_dot0){
-//     std::random_device rd;
-//     std::mt19937 gen(rd());
-//     std::normal_distribution<float> normal_dist(0,1);
-//     int num_trials = 10;
-
-//     std::vector<c_float> theta_ideal,theta_guess;
-//     theta_ideal.resize(params_.horizon);
-//     theta_guess.resize(params_.horizon);
-
-//     float diff = -theta0/(params_.horizon-1);
-//     for (int i = 0; i < params_.horizon; i++){
-//         theta_ideal[i] = theta0 + static_cast<float>(i)*diff;
-//     }
-
-//     c_float cost_best = QP::POS_INF;
-//     Solution solution,solution_best;
-//     for (int i = 0; i < num_trials; i++){
-//         theta_guess = theta_ideal;
-//         if (i != 0) {
-//             for (int j = 1; j < params_.horizon; j++){
-//                 theta_guess[j] += normal_dist(gen);
-//             }
-//         }
-
-//         solution = solve(theta_guess,theta_dot0);
-        
-//         if (solution.cost < cost_best){
-//             solution_best = solution;
-//             cost_best = solution.cost;
-//         }
-
-//     }
-
-//     return solution_best;
-// }
-
 Pendulum::Solution Pendulum::solve(c_float theta0_val,c_float theta0_dot_val){
     Solution solution;
     solution.slack_trials.clear();
