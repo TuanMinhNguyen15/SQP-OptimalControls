@@ -13,9 +13,11 @@ Interestingly, I found that after SCP converged, the slack variables correspondi
   <img src="graphs/theta_vs_timestep.png" />
 </p>
 
+
 <p align="center">
   <img src="graphs/thetadot_vs_timestep.png" />
 </p>
+
 
 <p align="center">
   <img src="graphs/torque_vs_timestep.png" />
